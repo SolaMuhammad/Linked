@@ -1,0 +1,429 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="LinkedInModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Comment">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FK_UserId" Type="Int32" />
+    <Property Name="FK_PostId" Type="Int32" />
+    <Property Name="FK_SharedPostId" Type="Int32" />
+    <Property Name="Comment_Text" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Date" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Post" Relationship="Self.FK_Comments_Post" FromRole="Comments" ToRole="Post" />
+    <NavigationProperty Name="Shared_Post" Relationship="Self.FK_Comments_Shared_Post" FromRole="Comments" ToRole="Shared_Post" />
+    <NavigationProperty Name="User_Details" Relationship="Self.FK_Comments_User_Details" FromRole="Comments" ToRole="User_Details" />
+  </EntityType>
+  <EntityType Name="Company">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="User_Com_Experience" Relationship="Self.FK_User_Com_Experience_Company" FromRole="Company" ToRole="User_Com_Experience" />
+  </EntityType>
+  <EntityType Name="Connection_Requeset">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FK_UserId" Type="Int32" />
+    <Property Name="FK_Connction_UserId" Type="Int32" />
+    <Property Name="IsApproved" Type="Boolean" />
+    <NavigationProperty Name="User_Details" Relationship="Self.FK_Connection_Requeset_User_Details" FromRole="Connection_Requeset" ToRole="User_Details" />
+    <NavigationProperty Name="User_Details1" Relationship="Self.FK_Connection_Requeset_User_Details1" FromRole="Connection_Requeset" ToRole="User_Details" />
+  </EntityType>
+  <EntityType Name="Education_Organization">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="User_Education" Relationship="Self.FK_User_Education_Education_Organization" FromRole="Education_Organization" ToRole="User_Education" />
+  </EntityType>
+  <EntityType Name="Language">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="User_Language" Relationship="Self.FK_User_Language_Language" FromRole="Language" ToRole="User_Language" />
+  </EntityType>
+  <EntityType Name="Post">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Post_Content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="FK_CreatorId" Type="Int32" />
+    <Property Name="Num_Of_Likes" Type="Int32" />
+    <Property Name="Num_Of_Comments" Type="Int32" />
+    <Property Name="Num_Of_Shares" Type="Int32" />
+    <Property Name="Date" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Comments" Relationship="Self.FK_Comments_Post" FromRole="Post" ToRole="Comments" />
+  </EntityType>
+  <EntityType Name="Profile_Views">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FK_UserId" Type="Int32" />
+    <Property Name="Viewer_UserId" Type="Int32" />
+    <Property Name="Date" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="User_Details" Relationship="Self.FK_Profile_Views_User_Details" FromRole="Profile_Views" ToRole="User_Details" />
+    <NavigationProperty Name="User_Details1" Relationship="Self.FK_Profile_Views_User_Details1" FromRole="Profile_Views" ToRole="User_Details" />
+  </EntityType>
+  <EntityType Name="Shared_Post">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Sharing_UserId" Type="Int32" />
+    <Property Name="Comment" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Comments" Relationship="Self.FK_Comments_Shared_Post" FromRole="Shared_Post" ToRole="Comments" />
+  </EntityType>
+  <EntityType Name="Skill">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Skill_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Num_Of_Endorse" Type="Int32" />
+    <NavigationProperty Name="User_Skill" Relationship="Self.FK_User_Skill_Skill" FromRole="Skill" ToRole="User_Skill" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="User_Com_Experience">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FK_UserId" Type="Int32" />
+    <Property Name="FK_CompId" Type="Int32" />
+    <Property Name="Detials" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Company" Relationship="Self.FK_User_Com_Experience_Company" FromRole="User_Com_Experience" ToRole="Company" />
+    <NavigationProperty Name="User_Details" Relationship="Self.FK_User_Com_Experience_User_Details" FromRole="User_Com_Experience" ToRole="User_Details" />
+  </EntityType>
+  <EntityType Name="User_Details">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Country" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Num_Of_Connection" Type="Int32" />
+    <NavigationProperty Name="Comments" Relationship="Self.FK_Comments_User_Details" FromRole="User_Details" ToRole="Comments" />
+    <NavigationProperty Name="Connection_Requeset" Relationship="Self.FK_Connection_Requeset_User_Details" FromRole="User_Details" ToRole="Connection_Requeset" />
+    <NavigationProperty Name="Connection_Requeset1" Relationship="Self.FK_Connection_Requeset_User_Details1" FromRole="User_Details" ToRole="Connection_Requeset" />
+    <NavigationProperty Name="Profile_Views" Relationship="Self.FK_Profile_Views_User_Details" FromRole="User_Details" ToRole="Profile_Views" />
+    <NavigationProperty Name="Profile_Views1" Relationship="Self.FK_Profile_Views_User_Details1" FromRole="User_Details" ToRole="Profile_Views" />
+    <NavigationProperty Name="User_Com_Experience" Relationship="Self.FK_User_Com_Experience_User_Details" FromRole="User_Details" ToRole="User_Com_Experience" />
+    <NavigationProperty Name="User_Education" Relationship="Self.FK_User_Education_User_Details" FromRole="User_Details" ToRole="User_Education" />
+    <NavigationProperty Name="User_Language" Relationship="Self.FK_User_Language_User_Details" FromRole="User_Details" ToRole="User_Language" />
+    <NavigationProperty Name="User_Skill" Relationship="Self.FK_User_Skill_User_Details" FromRole="User_Details" ToRole="User_Skill" />
+  </EntityType>
+  <EntityType Name="User_Education">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FK_UserId" Type="Int32" />
+    <Property Name="FK_EduId" Type="Int32" />
+    <Property Name="Date_From" Type="DateTime" Precision="0" />
+    <Property Name="Date_To" Type="DateTime" Precision="0" />
+    <Property Name="Degree" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Grade" Type="Int32" />
+    <NavigationProperty Name="Education_Organization" Relationship="Self.FK_User_Education_Education_Organization" FromRole="User_Education" ToRole="Education_Organization" />
+    <NavigationProperty Name="User_Details" Relationship="Self.FK_User_Education_User_Details" FromRole="User_Education" ToRole="User_Details" />
+  </EntityType>
+  <EntityType Name="User_Language">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FK_UserId" Type="Int32" />
+    <Property Name="FK_LangId" Type="Int32" />
+    <NavigationProperty Name="Language" Relationship="Self.FK_User_Language_Language" FromRole="User_Language" ToRole="Language" />
+    <NavigationProperty Name="User_Details" Relationship="Self.FK_User_Language_User_Details" FromRole="User_Language" ToRole="User_Details" />
+  </EntityType>
+  <EntityType Name="User_Skill">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FK_UserId" Type="Int32" />
+    <Property Name="FK_SkillId" Type="Int32" />
+    <NavigationProperty Name="Skill" Relationship="Self.FK_User_Skill_Skill" FromRole="User_Skill" ToRole="Skill" />
+    <NavigationProperty Name="User_Details" Relationship="Self.FK_User_Skill_User_Details" FromRole="User_Skill" ToRole="User_Details" />
+  </EntityType>
+  <Association Name="FK_Comments_Post">
+    <End Role="Post" Type="Self.Post" Multiplicity="0..1" />
+    <End Role="Comments" Type="Self.Comment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Post">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Comments">
+        <PropertyRef Name="FK_PostId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Comments_Shared_Post">
+    <End Role="Shared_Post" Type="Self.Shared_Post" Multiplicity="0..1" />
+    <End Role="Comments" Type="Self.Comment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Shared_Post">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Comments">
+        <PropertyRef Name="FK_SharedPostId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Comments_User_Details">
+    <End Role="User_Details" Type="Self.User_Details" Multiplicity="0..1" />
+    <End Role="Comments" Type="Self.Comment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User_Details">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Comments">
+        <PropertyRef Name="FK_UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_User_Com_Experience_Company">
+    <End Role="Company" Type="Self.Company" Multiplicity="0..1" />
+    <End Role="User_Com_Experience" Type="Self.User_Com_Experience" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Company">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="User_Com_Experience">
+        <PropertyRef Name="FK_CompId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Connection_Requeset_User_Details">
+    <End Role="User_Details" Type="Self.User_Details" Multiplicity="0..1" />
+    <End Role="Connection_Requeset" Type="Self.Connection_Requeset" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User_Details">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Connection_Requeset">
+        <PropertyRef Name="FK_UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Connection_Requeset_User_Details1">
+    <End Role="User_Details" Type="Self.User_Details" Multiplicity="0..1" />
+    <End Role="Connection_Requeset" Type="Self.Connection_Requeset" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User_Details">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Connection_Requeset">
+        <PropertyRef Name="FK_Connction_UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_User_Education_Education_Organization">
+    <End Role="Education_Organization" Type="Self.Education_Organization" Multiplicity="0..1" />
+    <End Role="User_Education" Type="Self.User_Education" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Education_Organization">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="User_Education">
+        <PropertyRef Name="FK_EduId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_User_Language_Language">
+    <End Role="Language" Type="Self.Language" Multiplicity="0..1" />
+    <End Role="User_Language" Type="Self.User_Language" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Language">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="User_Language">
+        <PropertyRef Name="FK_LangId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Profile_Views_User_Details">
+    <End Role="User_Details" Type="Self.User_Details" Multiplicity="0..1" />
+    <End Role="Profile_Views" Type="Self.Profile_Views" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User_Details">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Profile_Views">
+        <PropertyRef Name="FK_UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Profile_Views_User_Details1">
+    <End Role="User_Details" Type="Self.User_Details" Multiplicity="0..1" />
+    <End Role="Profile_Views" Type="Self.Profile_Views" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User_Details">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Profile_Views">
+        <PropertyRef Name="Viewer_UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_User_Skill_Skill">
+    <End Role="Skill" Type="Self.Skill" Multiplicity="0..1" />
+    <End Role="User_Skill" Type="Self.User_Skill" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Skill">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="User_Skill">
+        <PropertyRef Name="FK_UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_User_Com_Experience_User_Details">
+    <End Role="User_Details" Type="Self.User_Details" Multiplicity="0..1" />
+    <End Role="User_Com_Experience" Type="Self.User_Com_Experience" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User_Details">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="User_Com_Experience">
+        <PropertyRef Name="FK_UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_User_Education_User_Details">
+    <End Role="User_Details" Type="Self.User_Details" Multiplicity="0..1" />
+    <End Role="User_Education" Type="Self.User_Education" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User_Details">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="User_Education">
+        <PropertyRef Name="FK_UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_User_Language_User_Details">
+    <End Role="User_Details" Type="Self.User_Details" Multiplicity="0..1" />
+    <End Role="User_Language" Type="Self.User_Language" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User_Details">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="User_Language">
+        <PropertyRef Name="FK_UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_User_Skill_User_Details">
+    <End Role="User_Details" Type="Self.User_Details" Multiplicity="0..1" />
+    <End Role="User_Skill" Type="Self.User_Skill" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User_Details">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="User_Skill">
+        <PropertyRef Name="FK_UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="LinkedInEntitiesContext" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Comments" EntityType="Self.Comment" />
+    <EntitySet Name="Companies" EntityType="Self.Company" />
+    <EntitySet Name="Connection_Requeset" EntityType="Self.Connection_Requeset" />
+    <EntitySet Name="Education_Organization" EntityType="Self.Education_Organization" />
+    <EntitySet Name="Languages" EntityType="Self.Language" />
+    <EntitySet Name="Posts" EntityType="Self.Post" />
+    <EntitySet Name="Profile_Views" EntityType="Self.Profile_Views" />
+    <EntitySet Name="Shared_Post" EntityType="Self.Shared_Post" />
+    <EntitySet Name="Skills" EntityType="Self.Skill" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <EntitySet Name="User_Com_Experience" EntityType="Self.User_Com_Experience" />
+    <EntitySet Name="User_Details" EntityType="Self.User_Details" />
+    <EntitySet Name="User_Education" EntityType="Self.User_Education" />
+    <EntitySet Name="User_Language" EntityType="Self.User_Language" />
+    <EntitySet Name="User_Skill" EntityType="Self.User_Skill" />
+    <AssociationSet Name="FK_Comments_Post" Association="Self.FK_Comments_Post">
+      <End Role="Post" EntitySet="Posts" />
+      <End Role="Comments" EntitySet="Comments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Comments_Shared_Post" Association="Self.FK_Comments_Shared_Post">
+      <End Role="Shared_Post" EntitySet="Shared_Post" />
+      <End Role="Comments" EntitySet="Comments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Comments_User_Details" Association="Self.FK_Comments_User_Details">
+      <End Role="User_Details" EntitySet="User_Details" />
+      <End Role="Comments" EntitySet="Comments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User_Com_Experience_Company" Association="Self.FK_User_Com_Experience_Company">
+      <End Role="Company" EntitySet="Companies" />
+      <End Role="User_Com_Experience" EntitySet="User_Com_Experience" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Connection_Requeset_User_Details" Association="Self.FK_Connection_Requeset_User_Details">
+      <End Role="User_Details" EntitySet="User_Details" />
+      <End Role="Connection_Requeset" EntitySet="Connection_Requeset" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Connection_Requeset_User_Details1" Association="Self.FK_Connection_Requeset_User_Details1">
+      <End Role="User_Details" EntitySet="User_Details" />
+      <End Role="Connection_Requeset" EntitySet="Connection_Requeset" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User_Education_Education_Organization" Association="Self.FK_User_Education_Education_Organization">
+      <End Role="Education_Organization" EntitySet="Education_Organization" />
+      <End Role="User_Education" EntitySet="User_Education" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User_Language_Language" Association="Self.FK_User_Language_Language">
+      <End Role="Language" EntitySet="Languages" />
+      <End Role="User_Language" EntitySet="User_Language" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Profile_Views_User_Details" Association="Self.FK_Profile_Views_User_Details">
+      <End Role="User_Details" EntitySet="User_Details" />
+      <End Role="Profile_Views" EntitySet="Profile_Views" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Profile_Views_User_Details1" Association="Self.FK_Profile_Views_User_Details1">
+      <End Role="User_Details" EntitySet="User_Details" />
+      <End Role="Profile_Views" EntitySet="Profile_Views" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User_Skill_Skill" Association="Self.FK_User_Skill_Skill">
+      <End Role="Skill" EntitySet="Skills" />
+      <End Role="User_Skill" EntitySet="User_Skill" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User_Com_Experience_User_Details" Association="Self.FK_User_Com_Experience_User_Details">
+      <End Role="User_Details" EntitySet="User_Details" />
+      <End Role="User_Com_Experience" EntitySet="User_Com_Experience" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User_Education_User_Details" Association="Self.FK_User_Education_User_Details">
+      <End Role="User_Details" EntitySet="User_Details" />
+      <End Role="User_Education" EntitySet="User_Education" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User_Language_User_Details" Association="Self.FK_User_Language_User_Details">
+      <End Role="User_Details" EntitySet="User_Details" />
+      <End Role="User_Language" EntitySet="User_Language" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User_Skill_User_Details" Association="Self.FK_User_Skill_User_Details">
+      <End Role="User_Details" EntitySet="User_Details" />
+      <End Role="User_Skill" EntitySet="User_Skill" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

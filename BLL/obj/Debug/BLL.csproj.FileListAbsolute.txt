@@ -1,0 +1,15 @@
+C:\Users\hp\source\repos\ITI\Projects\LinkedIn\LinkedIn\BLL\obj\Debug\BLL.csprojAssemblyReference.cache
+C:\Users\hp\source\repos\ITI\Projects\LinkedIn\LinkedIn\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+C:\Users\hp\source\repos\ITI\Projects\LinkedIn\LinkedIn\BLL\bin\Debug\BLL.dll.config
+C:\Users\hp\source\repos\ITI\Projects\LinkedIn\LinkedIn\BLL\bin\Debug\BLL.dll
+C:\Users\hp\source\repos\ITI\Projects\LinkedIn\LinkedIn\BLL\bin\Debug\BLL.pdb
+C:\Users\hp\source\repos\ITI\Projects\LinkedIn\LinkedIn\BLL\bin\Debug\DAL.dll
+C:\Users\hp\source\repos\ITI\Projects\LinkedIn\LinkedIn\BLL\bin\Debug\EntityFramework.dll
+C:\Users\hp\source\repos\ITI\Projects\LinkedIn\LinkedIn\BLL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\hp\source\repos\ITI\Projects\LinkedIn\LinkedIn\BLL\bin\Debug\DAL.pdb
+C:\Users\hp\source\repos\ITI\Projects\LinkedIn\LinkedIn\BLL\bin\Debug\DAL.dll.config
+C:\Users\hp\source\repos\ITI\Projects\LinkedIn\LinkedIn\BLL\bin\Debug\EntityFramework.xml
+C:\Users\hp\source\repos\ITI\Projects\LinkedIn\LinkedIn\BLL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\hp\source\repos\ITI\Projects\LinkedIn\LinkedIn\BLL\obj\Debug\BLL.csproj.CopyComplete
+C:\Users\hp\source\repos\ITI\Projects\LinkedIn\LinkedIn\BLL\obj\Debug\BLL.dll
+C:\Users\hp\source\repos\ITI\Projects\LinkedIn\LinkedIn\BLL\obj\Debug\BLL.pdb
