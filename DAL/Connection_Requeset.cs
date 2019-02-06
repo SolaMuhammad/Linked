@@ -17,7 +17,7 @@ namespace DAL
         public int Id { get; set; }
         public Nullable<int> FK_UserId { get; set; }
         public Nullable<int> FK_Connction_UserId { get; set; }
-        public Nullable<bool> IsApproved { get; set; }
+        public bool IsApproved { get; set; }
     
         public virtual User_Details User_Details { get; set; }
         public virtual User_Details User_Details1 { get; set; }

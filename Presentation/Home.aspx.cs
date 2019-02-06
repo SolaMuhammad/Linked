@@ -21,5 +21,11 @@ namespace Presentation
                 posts.DataBind();
             }
         }
+
+        protected void Post_Click(object sender, EventArgs e)
+        {
+            PostsManager.AddPost(Convert.ToInt32(
+                userId.Text), content.Text);
+        }
     }
 }

@@ -33,7 +33,7 @@
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="FK_UserId" Type="int" />
           <Property Name="FK_Connction_UserId" Type="int" />
-          <Property Name="IsApproved" Type="bit" />
+          <Property Name="IsApproved" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="Education_Organization">
           <Key>
@@ -141,8 +141,8 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="FK_UserId" Type="int" />
-          <Property Name="FK_SkillId" Type="int" />
+          <Property Name="FK_UserId" Type="int" Nullable="false" />
+          <Property Name="FK_SkillId" Type="int" Nullable="false" />
         </EntityType>
         <Association Name="FK_Comments_Post">
           <End Role="Post" Type="Self.Post" Multiplicity="0..1" />
@@ -301,7 +301,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_User_Skill_Skill">
-          <End Role="Skill" Type="Self.Skill" Multiplicity="0..1" />
+          <End Role="Skill" Type="Self.Skill" Multiplicity="1" />
           <End Role="User_Skill" Type="Self.User_Skill" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Skill">
@@ -313,7 +313,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_User_Skill_User_Details">
-          <End Role="User_Details" Type="Self.User_Details" Multiplicity="0..1" />
+          <End Role="User_Details" Type="Self.User_Details" Multiplicity="1" />
           <End Role="User_Skill" Type="Self.User_Skill" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="User_Details">
@@ -438,7 +438,7 @@
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="FK_UserId" Type="Int32" />
           <Property Name="FK_Connction_UserId" Type="Int32" />
-          <Property Name="IsApproved" Type="Boolean" />
+          <Property Name="IsApproved" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="User_Details" Relationship="Self.FK_Connection_Requeset_User_Details" FromRole="Connection_Requeset" ToRole="User_Details" />
           <NavigationProperty Name="User_Details1" Relationship="Self.FK_Connection_Requeset_User_Details1" FromRole="Connection_Requeset" ToRole="User_Details" />
         </EntityType>
@@ -570,8 +570,8 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="FK_UserId" Type="Int32" />
-          <Property Name="FK_SkillId" Type="Int32" />
+          <Property Name="FK_UserId" Type="Int32" Nullable="false" />
+          <Property Name="FK_SkillId" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Skill" Relationship="Self.FK_User_Skill_Skill" FromRole="User_Skill" ToRole="Skill" />
           <NavigationProperty Name="User_Details" Relationship="Self.FK_User_Skill_User_Details" FromRole="User_Skill" ToRole="User_Details" />
         </EntityType>
@@ -696,7 +696,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_User_Skill_Skill">
-          <End Role="Skill" Type="Self.Skill" Multiplicity="0..1" />
+          <End Role="Skill" Type="Self.Skill" Multiplicity="1" />
           <End Role="User_Skill" Type="Self.User_Skill" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Skill">
@@ -744,7 +744,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_User_Skill_User_Details">
-          <End Role="User_Details" Type="Self.User_Details" Multiplicity="0..1" />
+          <End Role="User_Details" Type="Self.User_Details" Multiplicity="1" />
           <End Role="User_Skill" Type="Self.User_Skill" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="User_Details">
