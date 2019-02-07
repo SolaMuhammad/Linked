@@ -23,6 +23,7 @@ namespace DAL
         public int Id { get; set; }
         public Nullable<int> Sharing_UserId { get; set; }
         public string Comment { get; set; }
+        public Nullable<int> post_id { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Comment> Comments { get; set; }

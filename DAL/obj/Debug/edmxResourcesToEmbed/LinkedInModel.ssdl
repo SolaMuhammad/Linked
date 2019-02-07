@@ -73,6 +73,7 @@
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Sharing_UserId" Type="int" />
     <Property Name="Comment" Type="nvarchar(max)" />
+    <Property Name="post_id" Type="int" />
   </EntityType>
   <EntityType Name="Skill">
     <Key>

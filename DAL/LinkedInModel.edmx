@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="LinkedInModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="LinkedInModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Comments">
           <Key>
             <PropertyRef Name="Id" />
@@ -78,6 +78,7 @@
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Sharing_UserId" Type="int" />
           <Property Name="Comment" Type="nvarchar(max)" />
+          <Property Name="post_id" Type="int" />
         </EntityType>
         <EntityType Name="Skill">
           <Key>
@@ -401,8 +402,7 @@
             <End Role="User_Skill" EntitySet="User_Skill" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="LinkedInModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -491,6 +491,7 @@
           <Property Name="Sharing_UserId" Type="Int32" />
           <Property Name="Comment" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Comments" Relationship="Self.FK_Comments_Shared_Post" FromRole="Shared_Post" ToRole="Comments" />
+          <Property Name="post_id" Type="Int32" />
         </EntityType>
         <EntityType Name="Skill">
           <Key>
@@ -914,6 +915,7 @@
           <EntitySetMapping Name="Shared_Post">
             <EntityTypeMapping TypeName="LinkedInModel.Shared_Post">
               <MappingFragment StoreEntitySet="Shared_Post">
+                <ScalarProperty Name="post_id" ColumnName="post_id" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Sharing_UserId" ColumnName="Sharing_UserId" />
                 <ScalarProperty Name="Comment" ColumnName="Comment" />

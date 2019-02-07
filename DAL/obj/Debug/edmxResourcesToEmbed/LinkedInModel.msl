@@ -77,6 +77,7 @@
     <EntitySetMapping Name="Shared_Post">
       <EntityTypeMapping TypeName="LinkedInModel.Shared_Post">
         <MappingFragment StoreEntitySet="Shared_Post">
+          <ScalarProperty Name="post_id" ColumnName="post_id" />
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Sharing_UserId" ColumnName="Sharing_UserId" />
           <ScalarProperty Name="Comment" ColumnName="Comment" />

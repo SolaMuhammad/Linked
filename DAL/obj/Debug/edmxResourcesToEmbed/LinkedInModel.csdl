@@ -85,6 +85,7 @@
     <Property Name="Sharing_UserId" Type="Int32" />
     <Property Name="Comment" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="Comments" Relationship="Self.FK_Comments_Shared_Post" FromRole="Shared_Post" ToRole="Comments" />
+    <Property Name="post_id" Type="Int32" />
   </EntityType>
   <EntityType Name="Skill">
     <Key>
