@@ -15,10 +15,10 @@ namespace DAL
     public partial class User_Skill
     {
         public int Id { get; set; }
-        public int FK_UserId { get; set; }
         public int FK_SkillId { get; set; }
+        public Nullable<System.Guid> FK_UserId { get; set; }
     
-        public virtual Skill Skill { get; set; }
         public virtual User_Details User_Details { get; set; }
+        public virtual Skill Skill { get; set; }
     }
 }

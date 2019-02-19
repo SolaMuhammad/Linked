@@ -14,10 +14,9 @@ namespace DAL
     
     public partial class Connection_Requeset
     {
-        public int Id { get; set; }
-        public Nullable<int> FK_UserId { get; set; }
-        public Nullable<int> FK_Connction_UserId { get; set; }
         public bool IsApproved { get; set; }
+        public System.Guid FK_UserId { get; set; }
+        public System.Guid FK_Connction_UserId { get; set; }
     
         public virtual User_Details User_Details { get; set; }
         public virtual User_Details User_Details1 { get; set; }

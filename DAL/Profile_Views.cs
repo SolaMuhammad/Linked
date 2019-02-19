@@ -15,9 +15,9 @@ namespace DAL
     public partial class Profile_Views
     {
         public int Id { get; set; }
-        public Nullable<int> FK_UserId { get; set; }
-        public Nullable<int> Viewer_UserId { get; set; }
         public Nullable<System.DateTime> Date { get; set; }
+        public System.Guid FK_UserId { get; set; }
+        public Nullable<System.Guid> Viewer_UserId { get; set; }
     
         public virtual User_Details User_Details { get; set; }
         public virtual User_Details User_Details1 { get; set; }

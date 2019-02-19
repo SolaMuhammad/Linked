@@ -9,7 +9,7 @@ namespace BLL
 {
     public class ShareManager
     {
-        public static void SharePost(int userId, int postId
+        public static void SharePost(Guid userId, int postId
             , string comment)
         {
             Shared_Post post = new Shared_Post();

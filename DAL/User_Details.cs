@@ -20,20 +20,24 @@ namespace DAL
             this.Comments = new HashSet<Comment>();
             this.Connection_Requeset = new HashSet<Connection_Requeset>();
             this.Connection_Requeset1 = new HashSet<Connection_Requeset>();
+            this.Likes = new HashSet<Like>();
+            this.Posts = new HashSet<Post>();
             this.Profile_Views = new HashSet<Profile_Views>();
             this.Profile_Views1 = new HashSet<Profile_Views>();
+            this.Shared_Post = new HashSet<Shared_Post>();
             this.User_Com_Experience = new HashSet<User_Com_Experience>();
             this.User_Education = new HashSet<User_Education>();
             this.User_Language = new HashSet<User_Language>();
             this.User_Skill = new HashSet<User_Skill>();
         }
     
-        public int Id { get; set; }
         public string Country { get; set; }
         public string Title { get; set; }
         public string Image { get; set; }
         public Nullable<int> Num_Of_Connection { get; set; }
+        public System.Guid Id { get; set; }
     
+        public virtual aspnet_Users aspnet_Users { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Comment> Comments { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
@@ -41,9 +45,15 @@ namespace DAL
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Connection_Requeset> Connection_Requeset1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Like> Likes { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Post> Posts { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Profile_Views> Profile_Views { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Profile_Views> Profile_Views1 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Shared_Post> Shared_Post { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<User_Com_Experience> User_Com_Experience { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

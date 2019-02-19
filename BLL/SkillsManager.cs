@@ -11,7 +11,7 @@ namespace BLL
     public static class SkillsManager
     {
 
-        public static void AddSkill(int userId, int skillId)
+        public static void AddSkill(Guid userId, int skillId)
         {
             User_Skill userSkill = new User_Skill();
             userSkill.FK_UserId = userId;
@@ -19,7 +19,7 @@ namespace BLL
             AppManager.linkedInContext.User_Skill.Add(userSkill);
             AppManager.linkedInContext.SaveChanges();
         }
-        public static void deleteSkill(int userId, int skillId)
+        public static void deleteSkill(Guid userId, int skillId)
         {
             User_Skill userSkill = new User_Skill();
             userSkill.FK_UserId = userId;
@@ -31,7 +31,7 @@ namespace BLL
         /***
          * Load all the skills for the profile page
          * */
-        public static List<Skill> GetAllByUserId(int userId)
+        public static List<Skill> GetAllByUserId(Guid userId)
         {
             List<int> skillIds = AppManager.linkedInContext.User_Skill
                 .Where(e => e.FK_UserId == userId).Select(s=>s.FK_SkillId).ToList();

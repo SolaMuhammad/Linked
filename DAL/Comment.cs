@@ -14,15 +14,14 @@ namespace DAL
     
     public partial class Comment
     {
-        public int Id { get; set; }
-        public Nullable<int> FK_UserId { get; set; }
         public Nullable<int> FK_PostId { get; set; }
         public Nullable<int> FK_SharedPostId { get; set; }
         public string Comment_Text { get; set; }
         public Nullable<System.DateTime> Date { get; set; }
+        public int Id { get; set; }
+        public Nullable<System.Guid> FK_UserId { get; set; }
     
         public virtual Post Post { get; set; }
-        public virtual Shared_Post Shared_Post { get; set; }
         public virtual User_Details User_Details { get; set; }
     }
 }

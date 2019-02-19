@@ -18,17 +18,24 @@ namespace DAL
         public Post()
         {
             this.Comments = new HashSet<Comment>();
+            this.Likes = new HashSet<Like>();
+            this.Shared_Post = new HashSet<Shared_Post>();
         }
     
         public int Id { get; set; }
         public string Post_Content { get; set; }
-        public Nullable<int> FK_CreatorId { get; set; }
         public Nullable<int> Num_Of_Likes { get; set; }
         public Nullable<int> Num_Of_Comments { get; set; }
         public Nullable<int> Num_Of_Shares { get; set; }
         public Nullable<System.DateTime> Date { get; set; }
+        public Nullable<System.Guid> FK_CreatorId { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Comment> Comments { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Like> Likes { get; set; }
+        public virtual User_Details User_Details { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Shared_Post> Shared_Post { get; set; }
     }
 }

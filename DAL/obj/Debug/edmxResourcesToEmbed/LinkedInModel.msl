@@ -1,15 +1,147 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="LinkedInModelStoreContainer" CdmEntityContainer="LinkedInEntitiesContext">
+  <EntityContainerMapping StorageEntityContainer="LinkedInModelStoreContainer" CdmEntityContainer="LinkedInContext">
+    <EntitySetMapping Name="aspnet_Applications">
+      <EntityTypeMapping TypeName="LinkedInModel.aspnet_Applications">
+        <MappingFragment StoreEntitySet="aspnet_Applications">
+          <ScalarProperty Name="ApplicationName" ColumnName="ApplicationName" />
+          <ScalarProperty Name="LoweredApplicationName" ColumnName="LoweredApplicationName" />
+          <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="aspnet_Membership">
+      <EntityTypeMapping TypeName="LinkedInModel.aspnet_Membership">
+        <MappingFragment StoreEntitySet="aspnet_Membership">
+          <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="PasswordFormat" ColumnName="PasswordFormat" />
+          <ScalarProperty Name="PasswordSalt" ColumnName="PasswordSalt" />
+          <ScalarProperty Name="MobilePIN" ColumnName="MobilePIN" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="LoweredEmail" ColumnName="LoweredEmail" />
+          <ScalarProperty Name="PasswordQuestion" ColumnName="PasswordQuestion" />
+          <ScalarProperty Name="PasswordAnswer" ColumnName="PasswordAnswer" />
+          <ScalarProperty Name="IsApproved" ColumnName="IsApproved" />
+          <ScalarProperty Name="IsLockedOut" ColumnName="IsLockedOut" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="LastLoginDate" ColumnName="LastLoginDate" />
+          <ScalarProperty Name="LastPasswordChangedDate" ColumnName="LastPasswordChangedDate" />
+          <ScalarProperty Name="LastLockoutDate" ColumnName="LastLockoutDate" />
+          <ScalarProperty Name="FailedPasswordAttemptCount" ColumnName="FailedPasswordAttemptCount" />
+          <ScalarProperty Name="FailedPasswordAttemptWindowStart" ColumnName="FailedPasswordAttemptWindowStart" />
+          <ScalarProperty Name="FailedPasswordAnswerAttemptCount" ColumnName="FailedPasswordAnswerAttemptCount" />
+          <ScalarProperty Name="FailedPasswordAnswerAttemptWindowStart" ColumnName="FailedPasswordAnswerAttemptWindowStart" />
+          <ScalarProperty Name="Comment" ColumnName="Comment" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="aspnet_Paths">
+      <EntityTypeMapping TypeName="LinkedInModel.aspnet_Paths">
+        <MappingFragment StoreEntitySet="aspnet_Paths">
+          <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
+          <ScalarProperty Name="PathId" ColumnName="PathId" />
+          <ScalarProperty Name="Path" ColumnName="Path" />
+          <ScalarProperty Name="LoweredPath" ColumnName="LoweredPath" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="aspnet_PersonalizationAllUsers">
+      <EntityTypeMapping TypeName="LinkedInModel.aspnet_PersonalizationAllUsers">
+        <MappingFragment StoreEntitySet="aspnet_PersonalizationAllUsers">
+          <ScalarProperty Name="PathId" ColumnName="PathId" />
+          <ScalarProperty Name="PageSettings" ColumnName="PageSettings" />
+          <ScalarProperty Name="LastUpdatedDate" ColumnName="LastUpdatedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="aspnet_PersonalizationPerUser">
+      <EntityTypeMapping TypeName="LinkedInModel.aspnet_PersonalizationPerUser">
+        <MappingFragment StoreEntitySet="aspnet_PersonalizationPerUser">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="PathId" ColumnName="PathId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="PageSettings" ColumnName="PageSettings" />
+          <ScalarProperty Name="LastUpdatedDate" ColumnName="LastUpdatedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="aspnet_Profile">
+      <EntityTypeMapping TypeName="LinkedInModel.aspnet_Profile">
+        <MappingFragment StoreEntitySet="aspnet_Profile">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="PropertyNames" ColumnName="PropertyNames" />
+          <ScalarProperty Name="PropertyValuesString" ColumnName="PropertyValuesString" />
+          <ScalarProperty Name="PropertyValuesBinary" ColumnName="PropertyValuesBinary" />
+          <ScalarProperty Name="LastUpdatedDate" ColumnName="LastUpdatedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="aspnet_Roles">
+      <EntityTypeMapping TypeName="LinkedInModel.aspnet_Roles">
+        <MappingFragment StoreEntitySet="aspnet_Roles">
+          <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+          <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+          <ScalarProperty Name="LoweredRoleName" ColumnName="LoweredRoleName" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="aspnet_SchemaVersions">
+      <EntityTypeMapping TypeName="LinkedInModel.aspnet_SchemaVersions">
+        <MappingFragment StoreEntitySet="aspnet_SchemaVersions">
+          <ScalarProperty Name="Feature" ColumnName="Feature" />
+          <ScalarProperty Name="CompatibleSchemaVersion" ColumnName="CompatibleSchemaVersion" />
+          <ScalarProperty Name="IsCurrentVersion" ColumnName="IsCurrentVersion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="aspnet_Users">
+      <EntityTypeMapping TypeName="LinkedInModel.aspnet_Users">
+        <MappingFragment StoreEntitySet="aspnet_Users">
+          <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="LoweredUserName" ColumnName="LoweredUserName" />
+          <ScalarProperty Name="MobileAlias" ColumnName="MobileAlias" />
+          <ScalarProperty Name="IsAnonymous" ColumnName="IsAnonymous" />
+          <ScalarProperty Name="LastActivityDate" ColumnName="LastActivityDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="aspnet_WebEvent_Events">
+      <EntityTypeMapping TypeName="LinkedInModel.aspnet_WebEvent_Events">
+        <MappingFragment StoreEntitySet="aspnet_WebEvent_Events">
+          <ScalarProperty Name="EventId" ColumnName="EventId" />
+          <ScalarProperty Name="EventTimeUtc" ColumnName="EventTimeUtc" />
+          <ScalarProperty Name="EventTime" ColumnName="EventTime" />
+          <ScalarProperty Name="EventType" ColumnName="EventType" />
+          <ScalarProperty Name="EventSequence" ColumnName="EventSequence" />
+          <ScalarProperty Name="EventOccurrence" ColumnName="EventOccurrence" />
+          <ScalarProperty Name="EventCode" ColumnName="EventCode" />
+          <ScalarProperty Name="EventDetailCode" ColumnName="EventDetailCode" />
+          <ScalarProperty Name="Message" ColumnName="Message" />
+          <ScalarProperty Name="ApplicationPath" ColumnName="ApplicationPath" />
+          <ScalarProperty Name="ApplicationVirtualPath" ColumnName="ApplicationVirtualPath" />
+          <ScalarProperty Name="MachineName" ColumnName="MachineName" />
+          <ScalarProperty Name="RequestUrl" ColumnName="RequestUrl" />
+          <ScalarProperty Name="ExceptionType" ColumnName="ExceptionType" />
+          <ScalarProperty Name="Details" ColumnName="Details" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="Comments">
       <EntityTypeMapping TypeName="LinkedInModel.Comment">
         <MappingFragment StoreEntitySet="Comments">
-          <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="FK_UserId" ColumnName="FK_UserId" />
           <ScalarProperty Name="FK_PostId" ColumnName="FK_PostId" />
           <ScalarProperty Name="FK_SharedPostId" ColumnName="FK_SharedPostId" />
           <ScalarProperty Name="Comment_Text" ColumnName="Comment_Text" />
           <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="FK_UserId" ColumnName="FK_UserId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -27,10 +159,9 @@
     <EntitySetMapping Name="Connection_Requeset">
       <EntityTypeMapping TypeName="LinkedInModel.Connection_Requeset">
         <MappingFragment StoreEntitySet="Connection_Requeset">
-          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IsApproved" ColumnName="IsApproved" />
           <ScalarProperty Name="FK_UserId" ColumnName="FK_UserId" />
           <ScalarProperty Name="FK_Connction_UserId" ColumnName="FK_Connction_UserId" />
-          <ScalarProperty Name="IsApproved" ColumnName="IsApproved" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -51,16 +182,25 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="Likes">
+      <EntityTypeMapping TypeName="LinkedInModel.Like">
+        <MappingFragment StoreEntitySet="Like">
+          <ScalarProperty Name="likeId" ColumnName="likeId" />
+          <ScalarProperty Name="postId" ColumnName="postId" />
+          <ScalarProperty Name="userId" ColumnName="userId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="Posts">
       <EntityTypeMapping TypeName="LinkedInModel.Post">
         <MappingFragment StoreEntitySet="Post">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Post_Content" ColumnName="Post_Content" />
-          <ScalarProperty Name="FK_CreatorId" ColumnName="FK_CreatorId" />
           <ScalarProperty Name="Num_Of_Likes" ColumnName="Num_Of_Likes" />
           <ScalarProperty Name="Num_Of_Comments" ColumnName="Num_Of_Comments" />
           <ScalarProperty Name="Num_Of_Shares" ColumnName="Num_Of_Shares" />
           <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="FK_CreatorId" ColumnName="FK_CreatorId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -68,19 +208,19 @@
       <EntityTypeMapping TypeName="LinkedInModel.Profile_Views">
         <MappingFragment StoreEntitySet="Profile_Views">
           <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
           <ScalarProperty Name="FK_UserId" ColumnName="FK_UserId" />
           <ScalarProperty Name="Viewer_UserId" ColumnName="Viewer_UserId" />
-          <ScalarProperty Name="Date" ColumnName="Date" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Shared_Post">
       <EntityTypeMapping TypeName="LinkedInModel.Shared_Post">
         <MappingFragment StoreEntitySet="Shared_Post">
-          <ScalarProperty Name="post_id" ColumnName="post_id" />
           <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="Sharing_UserId" ColumnName="Sharing_UserId" />
           <ScalarProperty Name="Comment" ColumnName="Comment" />
+          <ScalarProperty Name="post_id" ColumnName="post_id" />
+          <ScalarProperty Name="Sharing_UserId" ColumnName="Sharing_UserId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -108,20 +248,20 @@
       <EntityTypeMapping TypeName="LinkedInModel.User_Com_Experience">
         <MappingFragment StoreEntitySet="User_Com_Experience">
           <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="FK_UserId" ColumnName="FK_UserId" />
           <ScalarProperty Name="FK_CompId" ColumnName="FK_CompId" />
           <ScalarProperty Name="Detials" ColumnName="Detials" />
+          <ScalarProperty Name="FK_UserId" ColumnName="FK_UserId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="User_Details">
       <EntityTypeMapping TypeName="LinkedInModel.User_Details">
         <MappingFragment StoreEntitySet="User_Details">
-          <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Country" ColumnName="Country" />
           <ScalarProperty Name="Title" ColumnName="Title" />
           <ScalarProperty Name="Image" ColumnName="Image" />
           <ScalarProperty Name="Num_Of_Connection" ColumnName="Num_Of_Connection" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -129,12 +269,12 @@
       <EntityTypeMapping TypeName="LinkedInModel.User_Education">
         <MappingFragment StoreEntitySet="User_Education">
           <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="FK_UserId" ColumnName="FK_UserId" />
           <ScalarProperty Name="FK_EduId" ColumnName="FK_EduId" />
           <ScalarProperty Name="Date_From" ColumnName="Date_From" />
           <ScalarProperty Name="Date_To" ColumnName="Date_To" />
           <ScalarProperty Name="Degree" ColumnName="Degree" />
           <ScalarProperty Name="Grade" ColumnName="Grade" />
+          <ScalarProperty Name="FK_UserId" ColumnName="FK_UserId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -142,8 +282,8 @@
       <EntityTypeMapping TypeName="LinkedInModel.User_Language">
         <MappingFragment StoreEntitySet="User_Language">
           <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="FK_UserId" ColumnName="FK_UserId" />
           <ScalarProperty Name="FK_LangId" ColumnName="FK_LangId" />
+          <ScalarProperty Name="FK_UserId" ColumnName="FK_UserId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -151,10 +291,18 @@
       <EntityTypeMapping TypeName="LinkedInModel.User_Skill">
         <MappingFragment StoreEntitySet="User_Skill">
           <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="FK_UserId" ColumnName="FK_UserId" />
           <ScalarProperty Name="FK_SkillId" ColumnName="FK_SkillId" />
+          <ScalarProperty Name="FK_UserId" ColumnName="FK_UserId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <AssociationSetMapping Name="aspnet_UsersInRoles" TypeName="LinkedInModel.aspnet_UsersInRoles" StoreEntitySet="aspnet_UsersInRoles">
+      <EndProperty Name="aspnet_Roles">
+        <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+      </EndProperty>
+      <EndProperty Name="aspnet_Users">
+        <ScalarProperty Name="UserId" ColumnName="UserId" />
+      </EndProperty>
+    </AssociationSetMapping>
   </EntityContainerMapping>
 </Mapping>

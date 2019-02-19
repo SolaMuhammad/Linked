@@ -14,18 +14,12 @@ namespace DAL
     
     public partial class Shared_Post
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Shared_Post()
-        {
-            this.Comments = new HashSet<Comment>();
-        }
-    
         public int Id { get; set; }
-        public Nullable<int> Sharing_UserId { get; set; }
         public string Comment { get; set; }
         public Nullable<int> post_id { get; set; }
+        public System.Guid Sharing_UserId { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Comment> Comments { get; set; }
+        public virtual Post Post { get; set; }
+        public virtual User_Details User_Details { get; set; }
     }
 }

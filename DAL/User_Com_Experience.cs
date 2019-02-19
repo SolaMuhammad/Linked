@@ -15,9 +15,9 @@ namespace DAL
     public partial class User_Com_Experience
     {
         public int Id { get; set; }
-        public Nullable<int> FK_UserId { get; set; }
         public Nullable<int> FK_CompId { get; set; }
         public string Detials { get; set; }
+        public System.Guid FK_UserId { get; set; }
     
         public virtual Company Company { get; set; }
         public virtual User_Details User_Details { get; set; }

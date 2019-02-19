@@ -15,12 +15,12 @@ namespace DAL
     public partial class User_Education
     {
         public int Id { get; set; }
-        public Nullable<int> FK_UserId { get; set; }
         public Nullable<int> FK_EduId { get; set; }
         public Nullable<System.DateTime> Date_From { get; set; }
         public Nullable<System.DateTime> Date_To { get; set; }
         public string Degree { get; set; }
         public Nullable<int> Grade { get; set; }
+        public Nullable<System.Guid> FK_UserId { get; set; }
     
         public virtual Education_Organization Education_Organization { get; set; }
         public virtual User_Details User_Details { get; set; }
