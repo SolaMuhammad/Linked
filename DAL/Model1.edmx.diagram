@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="3224d7b534814f40835967615f7c2486" Name="Diagram1">
+        <EntityTypeShape EntityType="LinkedInModel.aspnet_Applications" Width="1.5" PointX="0.75" PointY="22.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="LinkedInModel.aspnet_Membership" Width="1.5" PointX="6" PointY="23.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="LinkedInModel.aspnet_Paths" Width="1.5" PointX="3" PointY="20.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="LinkedInModel.aspnet_PersonalizationAllUsers" Width="1.5" PointX="5.25" PointY="21.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="LinkedInModel.aspnet_PersonalizationPerUser" Width="1.5" PointX="5.25" PointY="17.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="LinkedInModel.aspnet_Profile" Width="1.5" PointX="10.5" PointY="21.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="LinkedInModel.aspnet_Roles" Width="1.5" PointX="3" PointY="30.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="LinkedInModel.aspnet_SchemaVersions" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LinkedInModel.aspnet_Users" Width="1.5" PointX="8.25" PointY="25.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LinkedInModel.aspnet_WebEvent_Events" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LinkedInModel.Comment" Width="1.5" PointX="15" PointY="30.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="LinkedInModel.Company" Width="1.5" PointX="10.5" PointY="32.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="LinkedInModel.Connection_Requeset" Width="1.5" PointX="12.75" PointY="27.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="LinkedInModel.Education_Organization" Width="1.5" PointX="13.5" PointY="16" IsExpanded="true" />
+        <EntityTypeShape EntityType="LinkedInModel.Language" Width="1.5" PointX="13.5" PointY="19.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="LinkedInModel.Like" Width="1.5" PointX="15" PointY="33.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="LinkedInModel.Post" Width="1.5" PointX="12.75" PointY="33.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="LinkedInModel.Profile_Views" Width="1.5" PointX="12.75" PointY="37.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="LinkedInModel.Shared_Post" Width="1.5" PointX="18" PointY="30.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="LinkedInModel.Skill" Width="1.5" PointX="10.5" PointY="19" IsExpanded="true" />
+        <EntityTypeShape EntityType="LinkedInModel.sysdiagram" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LinkedInModel.User_Com_Experience" Width="1.5" PointX="12.75" PointY="24.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="LinkedInModel.User_Details" Width="1.5" PointX="10.5" PointY="26.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="LinkedInModel.User_Education" Width="1.5" PointX="15.75" PointY="26.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="LinkedInModel.User_Language" Width="1.5" PointX="15.75" PointY="22.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="LinkedInModel.User_Skill" Width="1.5" PointX="12.75" PointY="21.875" IsExpanded="true" />
+        <AssociationConnector Association="LinkedInModel.FK__aspnet_Me__Appli__06CD04F7" ManuallyRouted="false" />
+        <AssociationConnector Association="LinkedInModel.FK__aspnet_Pa__Appli__3864608B" ManuallyRouted="false" />
+        <AssociationConnector Association="LinkedInModel.FK__aspnet_Ro__Appli__25518C17" ManuallyRouted="false" />
+        <AssociationConnector Association="LinkedInModel.FK__aspnet_Us__Appli__76969D2E" ManuallyRouted="false" />
+        <AssociationConnector Association="LinkedInModel.FK__aspnet_Me__UserI__07C12930" ManuallyRouted="false" />
+        <AssociationConnector Association="LinkedInModel.FK__aspnet_Pe__PathI__3E1D39E1" ManuallyRouted="false" />
+        <AssociationConnector Association="LinkedInModel.FK__aspnet_Pe__PathI__41EDCAC5" ManuallyRouted="false" />
+        <AssociationConnector Association="LinkedInModel.FK__aspnet_Pe__UserI__42E1EEFE" ManuallyRouted="false" />
+        <AssociationConnector Association="LinkedInModel.FK__aspnet_Pr__UserI__1BC821DD" ManuallyRouted="false" />
+        <AssociationConnector Association="LinkedInModel.FK_User_Details_aspnet_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="LinkedInModel.FK_Comments_Post" ManuallyRouted="false" />
+        <AssociationConnector Association="LinkedInModel.FK_Comments_User_Details" ManuallyRouted="false" />
+        <AssociationConnector Association="LinkedInModel.FK_User_Com_Experience_Company" ManuallyRouted="false" />
+        <AssociationConnector Association="LinkedInModel.FK_Connection_Requeset_User_Details" ManuallyRouted="false" />
+        <AssociationConnector Association="LinkedInModel.FK_Connection_Requeset_User_Details1" ManuallyRouted="false" />
+        <AssociationConnector Association="LinkedInModel.FK_User_Education_Education_Organization" ManuallyRouted="false" />
+        <AssociationConnector Association="LinkedInModel.FK_User_Language_Language" ManuallyRouted="false" />
+        <AssociationConnector Association="LinkedInModel.FK_Like_Post" ManuallyRouted="false" />
+        <AssociationConnector Association="LinkedInModel.FK_Like_User_Details" ManuallyRouted="false" />
+        <AssociationConnector Association="LinkedInModel.FK_Post_User_Details" ManuallyRouted="false" />
+        <AssociationConnector Association="LinkedInModel.FK_Shared_Post_Post" ManuallyRouted="false" />
+        <AssociationConnector Association="LinkedInModel.FK_Profile_Views_User_Details" ManuallyRouted="false" />
+        <AssociationConnector Association="LinkedInModel.FK_Profile_Views_User_Details1" ManuallyRouted="false" />
+        <AssociationConnector Association="LinkedInModel.FK_Shared_Post_User_Details" ManuallyRouted="false" />
+        <AssociationConnector Association="LinkedInModel.FK_User_Skill_Skill" ManuallyRouted="false" />
+        <AssociationConnector Association="LinkedInModel.FK_User_Com_Experience_User_Details" ManuallyRouted="false" />
+        <AssociationConnector Association="LinkedInModel.FK_User_Education_User_Details" ManuallyRouted="false" />
+        <AssociationConnector Association="LinkedInModel.FK_User_Language_User_Details" ManuallyRouted="false" />
+        <AssociationConnector Association="LinkedInModel.FK_User_Skill_User_Details" ManuallyRouted="false" />
+        <AssociationConnector Association="LinkedInModel.aspnet_UsersInRoles" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

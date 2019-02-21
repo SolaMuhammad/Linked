@@ -25,11 +25,11 @@ namespace BLL
 
         //}
 
-        //public static List<User_Com_Experience> GetAllExperience(int userId)
-        //{
-        //    return AppManager.linkedInContext.User_Com_Experience.ToList();
+        public static List<User_Com_Experience> GetAllExperience(Guid userId)
+        {
+            return AppManager.linkedInContext.User_Com_Experience.ToList();
 
-        //}
+        }
 
     }
 }
