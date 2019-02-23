@@ -35,10 +35,10 @@ namespace BLL
         //    AppManager.linkedInContext.SaveChanges();
 
         //}
-        public static List<Comment> GetAllByPostId(int postId)
+        public  List<Comment> GetAllByPostId(int postId)
         {
 
-            List<Comment> commList = AppManager.linkedInContext.Comments.Where(u => u.FK_PostId == postId).Select(l => l).ToList();
+            List<Comment> commList = GetAll().Where(u => u.FK_PostId == postId).Select(l => l).ToList();
             return commList; ;
         }
         //public static void deleteComment(int commenttId)

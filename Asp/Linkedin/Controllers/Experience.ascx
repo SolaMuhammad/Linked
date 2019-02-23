@@ -13,22 +13,22 @@
 </head>
 
     <body>
-         <div class="experience">
+         <div class="experience" runat ="server">
         <div class="profile-section">experience</div>
 
         <div class="experience-data">
-            <div id="btn-add-experience" > <a class="btn-add-experience" runat="server" onserverclick="Experience_Click"><i class="fas fa-plus" ></i></a></div>
-            <div id="btn-edit-experience"><i class="fas fa-pen" runat="server"></i></div>
+            <div  id="btn-add-experience" > <a id="addExperience" class="btn-add-experience" runat="server" onserverclick="ExperienceAdd_Click"></a><i class="fas fa-plus" ></i></div>
+            <div id="btn-edit-experience" ><i id="editExperience" class="fas fa-pen" runat="server" onserverclick="ExperienceEdit_Click"></i></div>
             <div class="company-img-container">
                 <img src="images/Logo.png">
             </div>
             <div class="experience-details">
-                <div class="title" runat="server"> Full Stack Workshop</div>
+                <div class="title" id ="JobTitle" runat="server"> Full Stack Workshop</div>
                 <div id ="ComName" class="company-name" runat="server" ondatabinding="Page_Load">National Bank of Egypt (NBE)</div>
                 <div class="date">
-                    <span class="date-from">2012</span>
+                    <span id ="FromDate" class="date-from" runat="server">2012</span>
                     <span> - </span>
-                    <span class="date-to">2014</span>
+                    <span id ="ToDate" class="date-to" runat="server">2014</span>
                 </div>
             </div>
         </div>

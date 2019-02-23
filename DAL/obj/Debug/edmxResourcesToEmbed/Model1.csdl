@@ -269,8 +269,10 @@
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="FK_CompId" Type="Int32" />
-    <Property Name="Detials" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="FK_UserId" Type="Guid" Nullable="false" />
+    <Property Name="from" Type="Int32" Nullable="false" />
+    <Property Name="to" Type="Int32" Nullable="false" />
     <NavigationProperty Name="Company" Relationship="Self.FK_User_Com_Experience_Company" FromRole="User_Com_Experience" ToRole="Company" />
     <NavigationProperty Name="User_Details" Relationship="Self.FK_User_Com_Experience_User_Details" FromRole="User_Com_Experience" ToRole="User_Details" />
   </EntityType>

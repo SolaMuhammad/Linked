@@ -238,8 +238,10 @@
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="FK_CompId" Type="int" />
-    <Property Name="Detials" Type="nvarchar(max)" />
+    <Property Name="title" Type="nvarchar" MaxLength="50" />
     <Property Name="FK_UserId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="from" Type="int" Nullable="false" />
+    <Property Name="to" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="User_Details">
     <Key>

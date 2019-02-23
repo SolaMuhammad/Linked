@@ -249,8 +249,10 @@
         <MappingFragment StoreEntitySet="User_Com_Experience">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="FK_CompId" ColumnName="FK_CompId" />
-          <ScalarProperty Name="Detials" ColumnName="Detials" />
+          <ScalarProperty Name="title" ColumnName="title" />
           <ScalarProperty Name="FK_UserId" ColumnName="FK_UserId" />
+          <ScalarProperty Name="from" ColumnName="from" />
+          <ScalarProperty Name="to" ColumnName="to" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

@@ -33,7 +33,7 @@ namespace Repository
 
         public List<TEntity> GetById(params object[] id)
         {
-            throw new NotImplementedException();
+            return context.Set<TEntity>().ToList();
         }
 
         public bool Remove(TEntity entity)

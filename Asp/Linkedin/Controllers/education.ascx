@@ -20,13 +20,13 @@
                 <img src="images/Logo.png">
             </div>
             <div class="education-details">
-                <div class="School-Name">Ain Shams University</div>
-                <div class="degree">Bachelor’s Degree</div>
-                <div class="study-field">Computer Science</div>
+                <div class="School-Name" id="eduName" runat="server">Ain Shams University</div>
+                <div class="degree" id="grade" runat="server">Bachelor’s Degree</div>
+                <div class="study-field" id="field" runat="server">Computer Science</div>
                 <div class="date">
-                    <span class="Start-year">2014</span>
+                    <span class="Start-year" id="dateFrom" runat="server">2014</span>
                     <span> - </span>
-                    <span class="end-year">2018</span>
+                    <span class="end-year" id="dateTo" runat="server">2018</span>
                 </div>
             </div>
         </div>

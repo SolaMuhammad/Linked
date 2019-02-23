@@ -11,13 +11,19 @@ namespace LinkedIn.Controllers
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            var x = this.ComName =;
+            
         }
 
 
-        protected void Experience_Click(object sender, EventArgs e)
+        protected void ExperienceAdd_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Log In");
+            
         }
+
+        protected void ExperienceEdit_Click(object sender, EventArgs e)
+        {
+            //Response.Redirect("Log In");
+        }
+
     }
 }

@@ -12,6 +12,36 @@ namespace LinkedIn.Controllers {
     
     public partial class Experience {
         
+        
+        
+        /// <summary>
+        /// addExperience control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        public global::System.Web.UI.HtmlControls.HtmlAnchor addExperience;
+
+
+        /// <summary>
+        /// editExperience control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        public global::System.Web.UI.HtmlControls.HtmlGenericControl editExperience;
+        
+        /// <summary>
+        /// JobTitle control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        public global::System.Web.UI.HtmlControls.HtmlGenericControl JobTitle;
+        
         /// <summary>
         /// ComName control.
         /// </summary>
@@ -19,6 +49,24 @@ namespace LinkedIn.Controllers {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl ComName;
+        public global::System.Web.UI.HtmlControls.HtmlGenericControl ComName;
+        
+        /// <summary>
+        /// FromDate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        public global::System.Web.UI.HtmlControls.HtmlGenericControl FromDate;
+        
+        /// <summary>
+        /// ToDate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        public global::System.Web.UI.HtmlControls.HtmlGenericControl ToDate;
     }
 }

@@ -55,13 +55,15 @@
     <Compile Include="CommentsManager.cs" />
     <Compile Include="CompanyManager.cs" />
     <Compile Include="ConnectionsManager.cs" />
-    <Compile Include="Education.cs" />
+    <Compile Include="EducationManager.cs" />
+    <Compile Include="Education_OrganizationManager.cs" />
     <Compile Include="ExperienceManager.cs" />
     <Compile Include="LikesManager.cs" />
     <Compile Include="PostsManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ShareManager.cs" />
     <Compile Include="SkillsManager.cs" />
+    <Compile Include="UserSkillsManager.cs" />
     <Compile Include="UserActions.cs" />
     <Compile Include="Views.cs" />
   </ItemGroup>

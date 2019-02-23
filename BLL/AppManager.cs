@@ -12,7 +12,7 @@ namespace BLL
      * */
     public class AppManager
     {
-        public static LinkedInContext linkedInContext =
+        public   static LinkedInContext linkedInContext =
             new LinkedInContext();
         public PostsManager Post
         {
@@ -33,6 +33,21 @@ namespace BLL
             get
             {
                 return new UserActions(linkedInContext);
+            }
+        }
+        public EducationManager EducationManager
+        {
+            get
+            {
+                return new EducationManager(linkedInContext);
+            }
+        }
+
+        public Education_OrganizationManager Education_Organization
+        {
+            get
+            {
+                return new Education_OrganizationManager(linkedInContext);
             }
         }
 
